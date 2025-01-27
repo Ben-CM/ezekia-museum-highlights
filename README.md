@@ -1,6 +1,8 @@
 # ezekia-museum-highlights
 
-IDE set up using NPM to speed up the production and reviewing of this project
+IDE set up using NPM to speed up the production and reviewing of this project.
+
+For various test cases involving different data properties, comments have been added in SpacePage.vue to guide you through reconfiguring the mock data.
 
 ## Recommended IDE Setup
 
