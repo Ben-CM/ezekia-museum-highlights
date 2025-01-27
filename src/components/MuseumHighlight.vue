@@ -38,9 +38,9 @@
                 </template>
 
                 <template v-if="Object.keys(otherProperties).length > 0">
-                    <div class="card__properties">
+                    <div class="other__properties">
                         <p v-for="(value, key) in otherProperties" :key="key">
-                            <span class="title-case">{{ key }}: {{ value }}</span>
+                            <span class="property__key">{{ key }}</span>: {{ value }}
                         </p>
                     </div>
                 </template>
@@ -50,10 +50,11 @@
             <div class="card__footer">
 
                 <div class="buttons buttons--end buttons--small-gap">
+                    <!-- Dynamically add quiz button if present as quiz is a known property to expect -->
                     <a class="button quiz__button button-light" target="_blank" v-if="quizLink" :href="quizLink">Take
                         the
                         quiz</a>
-                    <!-- Dynamically add quiz button if present as quiz is a known property to expect -->
+
 
                     <button @click="getNewImage()" class="button refresh__button">Refresh image</button>
                 </div>
@@ -276,10 +277,6 @@ export default {
             flex: 1;
             padding: 1rem;
 
-            &>* {
-                width: 100%;
-            }
-
             .card__title {
                 font-size: 1.5rem;
                 font-weight: bold;
@@ -298,6 +295,13 @@ export default {
             .refresh__button {
                 align-self: flex-end;
                 justify-self: flex-end;
+            }
+
+            .other__properties {
+                .property__key {
+                    text-transform: capitalize;
+                    font-weight: bold;
+                }
             }
         }
 
